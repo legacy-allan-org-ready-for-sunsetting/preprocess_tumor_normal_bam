@@ -1,0 +1,3 @@
+[submodule "bam_preprocessing"]
+	path = bam_preprocessing
+	url = https://github.com/mskcc-cwl/bam_preprocessing
