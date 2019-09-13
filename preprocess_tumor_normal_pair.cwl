@@ -69,13 +69,13 @@ steps:
       reference_sequence: reference_sequence
       known_sites: known_sites
       r1: 
-        valueFrom: $(inputs.tumor_sample.R1)
+        valueFrom: ${ return inputs.sample.R1 }
       r2:
-        valueFrom: $(inputs.tumor_sample.R2)
+        valueFrom: ${ return inputs.sample.R2}
       lane_id: 
-        valueFrom: $(inputs.RG_ID)
+        valueFrom: ${ return inputs.sample.RG_ID }
       sample_id:
-        valueFrom: $(inputs.ID)
+        valueFrom: ${ return inputs.sample.ID }
     out: [ output_bam ]
     run: bam_preprocessing/bam_preprocessing.cwl
 
@@ -85,13 +85,13 @@ steps:
       reference_sequence: reference_sequence
       known_sites: known_sites
       r1: 
-        valueFrom: $(inputs.normal_sample.R1)
+        valueFrom: ${ return inputs.sample.R1 }
       r2:
-        valueFrom: $(inputs.normal_sample.R2)
+        valueFrom: ${ return inputs.sample.R2 }
       lane_id: 
-        valueFrom: $(inputs.RG_ID)
+        valueFrom: ${ return inputs.sample.RG_ID }
       sample_id:
-        valueFrom: $(inputs.ID)
+        valueFrom: ${ return inputs.sample.ID }
     out: [ output_bam ]
     run: bam_preprocessing/bam_preprocessing.cwl
 
