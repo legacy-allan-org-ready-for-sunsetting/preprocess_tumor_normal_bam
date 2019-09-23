@@ -58,9 +58,13 @@ outputs:
   tumor_bam:
     type: File
     outputSource: make_bam_tumor/output_bam
+    secondaryFiles:
+      - ^.bai
   normal_bam:
     type: File
     outputSource: make_bam_normal/output_bam
+    secondaryFiles:
+      - ^.bai
 
 steps:
   make_bam_tumor:
